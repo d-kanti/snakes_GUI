@@ -13,7 +13,7 @@ class Game():
         self.apple = Apple()
         self.snake = Snake()
 
-    def run():
+    def run(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
