@@ -13,6 +13,13 @@ class Game():
         self.apple = Apple()
         self.snake = Snake()
 
+    
+    def draw(self):
+        self.screen.fill(Config.BG_COLOR)
+        pygame.display.update()
+        self.clock.tick(Config.FPS)
+
+
     def run(self):
         while True:
             for event in pygame.event.get():
@@ -24,6 +31,7 @@ class Game():
                         pygame.quit()
                         sys.exit()
 
-            self.screen.fill((255,255,255))
-            pygame.display.update()
-            self.clock.tick(60)
+            # self.snake.update(self.apple)
+            self.draw()
+            # if self.isOver():
+            #     break
