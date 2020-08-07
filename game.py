@@ -1,7 +1,7 @@
 import config as Config
 from snake import Snake
 from apple import Apple
-import pygame
+import pygame,sys
 
 class Game():
     def __init__(self):
@@ -12,4 +12,18 @@ class Game():
         pygame.display.set_caption("Snakes")
         self.apple = Apple()
         self.snake = Snake()
-        
+
+    def run():
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+
+            self.screen.fill((255,255,255))
+            pygame.display.update()
+            self.clock.tick(60)
